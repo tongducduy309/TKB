@@ -1,10 +1,8 @@
 :root {
   --title-color: #333;
-  --empty-color: #f2f2f2;
-  --basic-col-color: #fff;
 
-  --primary-color: #f75c1e;
-  --course-color: #fee1d6;
+  --primary-1-color: #f75c1e;
+  --course-1-color: #fee1d6;
 
   --primary-2-color: #369925;
   --course-2-color: #ebf4e9;
@@ -54,6 +52,7 @@ body{
 
 .selected{
   border: 2px solid #002b57 !important;
+  z-index: 20;
 }
 
 #bg {
@@ -100,10 +99,11 @@ body{
   padding: 10px 20px;
   border-radius: 100px;
   background-color: #dfdfdf;
-  font-size: 1.5rem;
-  color: #000;
   outline: 0;
   border: none;
+  font-size: 1.5rem;
+  color: #000;
+  
 }
 
 #dialogAdd textarea{
@@ -114,6 +114,23 @@ body{
 #dialogAdd select{
   border: 1px solid #dfdfdf;
   padding: 5px 10px;
+}
+
+#dialog .groupColor{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: right;
+  margin-bottom: 10px;
+}
+
+#dialog .color{
+  height: 100%;
+  aspect-ratio: 1/1;
+  border: 1px solid rgba(86, 86, 87, 0.342);
+  margin: 5px;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 #dialog .button, #dialogAdd .button {
@@ -182,14 +199,13 @@ body{
 
 #container_HKIT {
   display: flex;
-  position: relative;
   width: 100%;
-  height: 100%;
-  top:0;
+  height: 100vh;
+  top: 0;
   left: 0;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 50px;
   transition: all ease-in 0.8s;
   user-select: none;
 }
@@ -208,6 +224,7 @@ body{
 #container_HKIT td {
   border: 1px solid #cfcfcf;
   margin: 10px;
+  
   
 }
 
@@ -313,106 +330,6 @@ body{
   font-size: 0.8rem;
 }
 
-#container_HKIT .course-0 {
-  background-color: var(--course-color);
-  color: var(--primary-color) !important;
-}
-
-#container_HKIT .course-1 {
-  background-color: var(--course-2-color);
-  color: var(--primary-2-color) !important;
-}
-
-#container_HKIT .course-2 {
-  background-color: var(--course-3-color);
-  color: var(--primary-3-color) !important;
-}
-
-#container_HKIT .course-3 {
-  background-color: var(--course-4-color);
-  color: var(--primary-4-color) !important;
-}
-
-#container_HKIT .course-4 {
-  background-color: var(--course-5-color);
-  color: var(--primary-5-color) !important;
-}
-
-#container_HKIT .course-5 {
-  background-color: var(--course-6-color);
-  color: var(--primary-6-color) !important;
-}
-
-#container_HKIT .course-6 {
-  background-color: var(--course-7-color);
-  color: var(--primary-7-color) !important;
-}
-
-#container_HKIT .course-7 {
-  background-color: var(--course-8-color);
-  color: var(--primary-8-color) !important;
-}
-
-#container_HKIT .course-8 {
-  background-color: var(--course-9-color);
-  color: var(--primary-9-color) !important;
-}
-
-#container_HKIT .course-9 {
-  background-color: var(--course-10-color);
-  color: var(--primary-10-color) !important;
-}
-
-#container_HKIT .course::after {
-  content: '';
-  position: absolute;
-  left: -2px;
-  top: -1px;
-  bottom: 0;
-  width: 4px;
-  z-index: 10;
-  border-radius: 10px;
-}
-
-#container_HKIT .course-0::after {
-  background-color: var(--primary-color) !important;
-}
-
-#container_HKIT .course-1::after {
-  background-color: var(--primary-2-color) !important;
-}
-
-#container_HKIT .course-2::after {
-  background-color: var(--primary-3-color) !important;
-}
-
-#container_HKIT .course-3::after {
-  background-color: var(--primary-4-color) !important;
-}
-
-#container_HKIT .course-4::after {
-  background-color: var(--primary-5-color) !important;
-}
-
-#container_HKIT .course-5::after {
-  background-color: var(--primary-6-color) !important;
-}
-
-#container_HKIT .course-6::after {
-  background-color: var(--primary-7-color) !important;
-}
-
-#container_HKIT .course-7::after {
-  background-color: var(--primary-8-color) !important;
-}
-
-#container_HKIT .course-8::after {
-  background-color: var(--primary-9-color) !important;
-}
-
-#container_HKIT .course-9::after {
-  background-color: var(--primary-10-color) !important;
-}
 
 #container_HKIT .text-color {
   font-weight: bold;
@@ -489,3 +406,12 @@ body{
 #contextmenu li:hover{
   background-color: rgba(31,38,67,0.1);
 }
+
+.btn:disabled,
+.btn[disabled="true"]{
+  border: 1px solid #999999;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+}
+
+
